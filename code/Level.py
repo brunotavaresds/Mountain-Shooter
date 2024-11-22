@@ -34,8 +34,11 @@ class Level:
         pygame.time.set_timer(EVENT_ENEMY, SPAWN_TIME)
         pygame.time.set_timer(EVENT_TIMEOUT, TIMEOUT_STEP)  # 100ms
 
+    def set_timeout(self, timeout: int):
+        self.timeout = timeout
+
     def run(self, player_score: list[int]):
-        pygame.mixer_music.load(f'./asset/{self.name}.mp3')
+        pygame.mixer_music.load(f'./asset/{self.name}.mp3') # 6- O level 3 deve ter uma música diferente do level 1 e level 2
         pygame.mixer_music.set_volume(0.3)
         pygame.mixer_music.play(-1)
         clock = pygame.time.Clock()
@@ -57,7 +60,10 @@ class Level:
                     pygame.quit()
                     sys.exit()
                 if event.type == EVENT_ENEMY:
-                    choice = random.choice(('Enemy1', 'Enemy2'))
+                    if self.name == 'Level3':
+                        choice = 'Enemy3' # 7- O level 3 deve ter um novo tipo de inimigo, chamado ‘Enemy3’.
+                    else:
+                        choice = random.choice(('Enemy1', 'Enemy2')) # 8- Diferente do level 1 e level 2, o level 3 deve gerar/criar aleatoriamente somente inimigos chamados ‘Enemy3’. Não pode haver ‘Enemy1’ e ‘Enemy2’ nele.
                     self.entity_list.append(EntityFactory.get_entity(choice))
                 if event.type == EVENT_TIMEOUT:
                     self.timeout -= TIMEOUT_STEP

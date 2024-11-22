@@ -19,11 +19,10 @@ class Menu:
         pygame.mixer_music.load('./asset/Menu.mp3')
         pygame.mixer_music.play(-1)
         while True:
-            # DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(50, "Mountain", C_ORANGE, ((WIN_WIDTH / 2), 70))
             self.menu_text(50, "Shooter", C_ORANGE, ((WIN_WIDTH / 2), 120))
-            self.menu_text(20, "Bruno Tavares Damaceno Sobrinho", C_WHITE, (120, 295))
+            self.menu_text(20, "Bruno Tavares Damaceno Sobrinho", C_WHITE, (120, 295)) # 1- O menu deve contém em qualquer um dos 4 cantos da tela o seu nome completo e seu RU. 
             self.menu_text(20, "RU: 4581007", C_WHITE, (45, 310))
 
             for i in range(len(MENU_OPTION)):

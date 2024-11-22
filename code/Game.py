@@ -4,7 +4,7 @@ import sys
 
 import pygame
 
-from code.Const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION
+from code.Const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION, TIMEOUT_LEVEL
 from code.Level import Level
 from code.Menu import Menu
 from code.Score import Score
@@ -25,11 +25,18 @@ class Game:
                 player_score = [0, 0]  # [Player1, Player2]
                 level = Level(self.window, 'Level1', menu_return, player_score)
                 level_return = level.run(player_score)
+                
                 if level_return:
                     level = Level(self.window, 'Level2', menu_return, player_score)
-                    level_return = level.run(player_score)
-                    if level_return:
-                        score.save(menu_return, player_score)
+                    level_return = level.run(player_score)                    
+                    
+                    if level_return: # 2- O level 3 deve aparecer após o level 2 e antes da tela final de score; 
+                        level = Level(self.window, 'Level3', menu_return, player_score)
+                        level.set_timeout(TIMEOUT_LEVEL * 2) # 4- Dobro de tempo do level 1 e 2
+                        level_return = level.run(player_score)
+                        
+                        if level_return:
+                            score.save(menu_return, player_score)
 
             elif menu_return == MENU_OPTION[3]:
                 score.show()
