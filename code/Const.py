@@ -37,7 +37,7 @@ ENTITY_SPEED = {
     'Enemy2Shot': 2,
     'Enemy3': 1,
     'Enemy3Shot': 5,
-    }
+}
 
 ENTITY_HEALTH = {
     'Level1Bg0': 999,
@@ -181,4 +181,4 @@ SCORE_POS = {'Title': (WIN_WIDTH / 2, 50),
              6: (WIN_WIDTH / 2, 230),
              7: (WIN_WIDTH / 2, 250),
              8: (WIN_WIDTH / 2, 270),
-             9: (WIN_WIDTH / 2, 290),}
+             9: (WIN_WIDTH / 2, 290), }

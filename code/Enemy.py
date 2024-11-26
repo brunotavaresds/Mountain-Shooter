@@ -13,10 +13,10 @@ class Enemy(Entity):
     # Comportamento do inimigo 3
         self.movement_vertical = name == 'Enemy3'
         if self.movement_vertical:
-            self.inicio_y = position [1]
+            self.inicio_y = position[1]
             # Velocidade do inimigo 3
             self.y_velocidade_up = 1
-            self.y_velocidade_down = 2 # dobro do valor da subida
+            self.y_velocidade_down = 2  # dobro do valor da subida
             self.direction = 1
             self.y_max = WIN_HEIGHT - self.rect.height // 2
             self.y_min = self.rect.height // 2
@@ -29,7 +29,7 @@ class Enemy(Entity):
             else:
                 velocidade = self.y_velocidade_up
 
-            if self.rect.centery >= self.y_max or self.rect.centery <=self.y_min:
+            if self.rect.centery >= self.y_max or self.rect.centery <= self.y_min:
                 self.direction *= -1
 
             self.rect.centery += velocidade * self.direction
