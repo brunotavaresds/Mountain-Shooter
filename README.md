@@ -2,15 +2,13 @@
 ===============
  
 
+Exercício feito para a faculdade com o objetivo de incluir novos monstros, novo nível, nova música e fazer com que toda pontuação apareça no placar final.
+
 ### About
 
 Mountain Shooter is a 2D arcade game developed with Pygame. The game has 2 levels and each level level end with a timeout event.
 Can be played coop (2 players).
 Score is saved in database (SQLite3))
-
-
-Exercício feito para a faculdade com o objetivo de incluir novos monstros, novo nível, nova música e fazer com que tudo apareça no placar final.
-
 
 
 GAME MENU
