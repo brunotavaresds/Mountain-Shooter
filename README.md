@@ -9,7 +9,7 @@ Can be played coop (2 players).
 Score is saved in database (SQLite3))
 
 
-### Feel free if you want to contribute.
+Exercício feito para a faculdade com o objetivo de incluir novos monstros, novo nível, nova música e fazer com que tudo apareça no placar final.
 
 
 
